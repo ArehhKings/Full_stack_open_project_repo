@@ -2,7 +2,7 @@ sequenceDiagram
     participant browser
     participant server
 
-    Note right of browser: User writes a note and clicks the Save button
+    Note right of browser: The user writes a new note and clicks the Save button
 
     Note right of browser: JavaScript handles the form submission
     Note right of browser: JavaScript creates the new note and adds it to the notes list
@@ -17,5 +17,4 @@ sequenceDiagram
     server-->>browser: HTTP 201 Created
     deactivate server
 
-    Note right of browser: Browser stays on the same page
-    Note right of browser: No page reload and no additional HTTP requests
+    Note right of browser: Browser stays on the same page; No page reload and no additional HTTP requests
