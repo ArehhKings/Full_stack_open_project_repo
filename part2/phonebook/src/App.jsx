@@ -27,11 +27,15 @@ const App = () =>{
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const newPerson = {name: newName, number: newNumber};
+    if (!newName || !newNumber ) {
+      alert(`Fill in the empty input`)
+      return;
+    }
     if (NameAlreadyExist) {
       alert(`${newName} is already in the phonebook`);
-    } else {
-    setPersons([...persons, newPerson]);
+      return;
     }
+    setPersons([...persons, newPerson]);
     setNewName('');
     setNewNumber('');
   }
@@ -50,7 +54,7 @@ const filteredPersons = persons.filter((person) =>
       <Filter searchTerm={searchTerm} handleSearchFilter={handleSearchFilter} />
 
       <h3>Add a new</h3>
-      
+
       <FormList
         newName={newName}
         newNumber={newNumber}
