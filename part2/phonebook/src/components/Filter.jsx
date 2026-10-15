@@ -17,4 +17,4 @@ const {searchTerm, handleSearchFilter} = props
   );
 }
 
-export default Filter
+export default Filter;
